@@ -15,7 +15,7 @@ logging.basicConfig(
 
 base_model = sys.argv[1]
 adapter_model = sys.argv[2]
-tokenizer, model, device = load_tokenizer_and_model(base_model, adapter_model)
+tokenizer, model, device = load_tokenizer_and_model(base_model, adapter_model, load_8bit=sys.argv[3])
 
 
 def predict(
