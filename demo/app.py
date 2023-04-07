@@ -1,5 +1,6 @@
 # -*- coding:utf-8 -*-
 import os
+import sys
 import logging
 import sys
 import gradio as gr
@@ -13,9 +14,11 @@ logging.basicConfig(
     format="%(asctime)s [%(levelname)s] [%(filename)s:%(lineno)d] %(message)s",
 )
 
+load_8 = sys.argv[3].lower() == 'true'
+
 base_model = sys.argv[1]
 adapter_model = sys.argv[2]
-tokenizer, model, device = load_tokenizer_and_model(base_model, adapter_model, load_8bit=sys.argv[3])
+tokenizer, model, device = load_tokenizer_and_model(base_model, adapter_model, load_8bit=load_8)
 
 
 def predict(
@@ -242,5 +245,5 @@ demo.title = "Baize"
 if __name__ == "__main__":
     reload_javascript()
     demo.queue(concurrency_count=CONCURRENT_COUNT).launch(
-        share=False, favicon_path="./assets/favicon.ico", inbrowser=True
+        share=False, favicon_path="./assets/favicon.ico", inbrowser=True, server_name='0.0.0.0'
     )
