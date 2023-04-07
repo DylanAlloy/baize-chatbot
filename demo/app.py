@@ -240,7 +240,7 @@ with gr.Blocks(css=customCSS, theme=small_and_beautiful_theme) as demo:
         show_progress=True,
     )
 
-demo.title = "Baize"
+demo.title = "Alloy"
 
 if __name__ == "__main__":
     reload_javascript()
