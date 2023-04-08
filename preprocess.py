@@ -14,8 +14,8 @@ for i in range(100):
         temp = pickle.load(
             open("collected_data/{}_chat_{}.pkl".format(data_name, i), "rb")
         )
-    except:
-        continue
+    except Exception as e:
+        print(e)
     for topic in temp:
         x = temp[topic]
         x = x.split("[Human]")[1:-1]
