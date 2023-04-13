@@ -21,6 +21,13 @@ if data_name == "quora":
         for idx, x in enumerate(dataset["train"])
         if idx % total == index
     ]
+if data_name == "imdb":
+    dataset = load_dataset("imdb")
+    question = [
+        x["text"]
+        for idx, x in enumerate(dataset["train"])
+        if idx % total == index
+    ]
 elif data_name == "financial":
     dataset = load_dataset("financial_phrasebank", "sentences_50agree")
     question = [
