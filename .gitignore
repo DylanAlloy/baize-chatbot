@@ -4,7 +4,7 @@ __pycache__/
 *$py.class
 
 # LFS
-./data/imdb_chat_data.json
+data/imdb_chat_data.json
 
 # C extensions
 *.so
